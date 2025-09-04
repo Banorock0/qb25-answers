@@ -28,15 +28,15 @@ Miniproject 1 to parse through .fasta files and calculate metrics.
 ## Usage
 1. Make getGenomes.sh and assembly-metrics.py executable: 
 
-    ## chmod +x getGenomes.sh assembly-metrics.py
+    ```chmod +x getGenomes.sh assembly-metrics.py```
 
 2. Run getGenomes.sh to download required fasta files and fasta module:
 
-    ## ./getGenomes.sh
+    ```./getGenomes.sh```
 
 3. Run assembly-metrics.py to parse through fasta files and return number of contigs, total sequence length, and average sequence length:
 
-    ## ./assembly-metrics.py *.fa
+    ```./assembly-metrics.py *.fa```
 
 ## Results
 
