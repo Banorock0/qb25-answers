@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# Open ce11 file and calculate new score from original score, strandedness, and feature size
 with open("ce11_genes.bed",'r') as f:
     for i in f:
         i = i.rstrip("\n").split("\t")
