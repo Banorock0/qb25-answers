@@ -41,13 +41,17 @@ Miniproject 1 to parse through .fasta files and calculate metrics.
 ## Results
 
 File Name: caenorhabditis_remanei.PRJNA248909.WBPS19.genomic.fa
+
 Number of contigs: 1591, Total Length: 118549266, Average Length: 74512.42363293526
 
 File Name: caenorhabditis_remanei.PRJNA248911.WBPS19.genomic.fa
+
 Number of contigs: 912, Total Length: 124541912, Average Length: 136559.11403508772
 
 File Name: caenorhabditis_remanei.PRJNA53967.WBPS19.genomic.fa
+
 Number of contigs: 3670, Total Length: 145442736, Average Length: 39630.17329700272
 
 File Name: caenorhabditis_remanei.PRJNA577507.WBPS19.genomic.fa
+
 Number of contigs: 187, Total Length: 130480874, Average Length: 697758.6844919786
