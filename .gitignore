@@ -4,3 +4,4 @@
 *.gct
 *.fa
 GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt
+fasta.py
