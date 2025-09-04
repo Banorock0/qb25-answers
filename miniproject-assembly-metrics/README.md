@@ -34,7 +34,7 @@ Miniproject 1 to parse through .fasta files and calculate metrics.
 
     ```./getGenomes.sh```
 
-3. Run assembly-metrics.py to parse through fasta files and return number of contigs, total sequence length, and average sequence length:
+3. Run assembly-metrics.py to parse through fasta files and return number of contigs, total sequence length, average sequence length, and N50 values:
 
     ```./assembly-metrics.py *.fa```
 
@@ -42,12 +42,16 @@ Miniproject 1 to parse through .fasta files and calculate metrics.
 
 File Name: caenorhabditis_remanei.PRJNA248909.WBPS19.genomic.fa
 - Number of contigs: 1591, Total Length: 118549266, Average Length: 74512.42363293526
+- Sequence length of the shortest contig at 50% of the total assembly length (N50): 1522088
 
 File Name: caenorhabditis_remanei.PRJNA248911.WBPS19.genomic.fa
 - Number of contigs: 912, Total Length: 124541912, Average Length: 136559.11403508772
+- Sequence length of the shortest contig at 50% of the total assembly length (N50): 1765890
 
 File Name: caenorhabditis_remanei.PRJNA53967.WBPS19.genomic.fa
 - Number of contigs: 3670, Total Length: 145442736, Average Length: 39630.17329700272
+- Sequence length of the shortest contig at 50% of the total assembly length (N50): 435512
 
 File Name: caenorhabditis_remanei.PRJNA577507.WBPS19.genomic.fa
 - Number of contigs: 187, Total Length: 130480874, Average Length: 697758.6844919786
+- Sequence length of the shortest contig at 50% of the total assembly length (N50): 21501900
