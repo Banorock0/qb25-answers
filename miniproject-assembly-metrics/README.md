@@ -3,7 +3,9 @@
 
 Miniproject 1 to parse through .fasta files and calculate metrics.
 
-*Caenorhabditis remanei*
+## Required Fasta Files
+
+*Caenorhabditis remanei*:
 
 - https://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/WBPS19/species/caenorhabditis_remanei/PRJNA248909/caenorhabditis_remanei.PRJNA248909.WBPS19.genomic.fa.gz
 
@@ -12,3 +14,13 @@ Miniproject 1 to parse through .fasta files and calculate metrics.
 - https://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/WBPS19/species/caenorhabditis_remanei/PRJNA53967/caenorhabditis_remanei.PRJNA53967.WBPS19.genomic.fa.gz
 
 - https://ftp.ebi.ac.uk/pub/databases/wormbase/parasite/releases/WBPS19/species/caenorhabditis_remanei/PRJNA577507/caenorhabditis_remanei.PRJNA577507.WBPS19.genomic.fa.gz
+
+## Unzipped File Sizes:
+
+- 115M caenorhabditis_remanei.PRJNA248909.WBPS19.genomic.fa
+
+- 121M caenorhabditis_remanei.PRJNA248911.WBPS19.genomic.fa
+
+- 141M caenorhabditis_remanei.PRJNA53967.WBPS19.genomic.fa
+
+- 127M caenorhabditis_remanei.PRJNA577507.WBPS19.genomic.fa
