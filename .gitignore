@@ -1,4 +1,5 @@
+\untracked
 *.bed
 *.gtf
 *.gct
-*.txt
+GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt
