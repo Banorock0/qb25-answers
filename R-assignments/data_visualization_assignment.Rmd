@@ -138,14 +138,14 @@ After creating 5-panel plot, also split into two rows that separate genes that a
 
 hist_5 <- ggplot(dt_long, aes(x = TPM)) +
   geom_histogram(breaks = seq(0, 100, 2)) +
-  facet_wrap(vars(Tissue), nrow = 1)
+  facet_grid(.~Tissue)
 
 hist_5
 
 # your code for 10-panel plot
 hist_10 <- ggplot(dt_long, aes(x = TPM)) +
   geom_histogram(breaks = seq(0, 100, 2)) +
-  facet_wrap(vars(Tissue, is_mitochondrial), nrow = 2, scales = "free_y")
+  facet_grid(is_mitochondrial ~ Tissue, scales = "free_y", labeller = labeller(is_mitochondrial = c("FALSE" = "Nuclear","TRUE" = "Mitochondrial")))
 
 hist_10
 
