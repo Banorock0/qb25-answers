@@ -101,9 +101,9 @@ dt_mito <- dt %>% mutate(is_mitochondrial = str_starts(Description,"MT-")) # Bro
 mito_med <- dt_mito %>% group_by(is_mitochondrial) %>% summarize(mean = mean(Liver), median(Liver))
 
 # Interpretation here as a comment
-# Nuclear: mean = 34.7, median = 6.51
-# Mito: mean = 18648.8, median = 18805.5
-# The mitochondrial expression is much higher than the nuclear expression, and the distribution is relatively even skewed, indicating that most mitochondrial genes have a high level of expression around the mean. The nuclear expression is right skewed, indicating that the majority of nuclear genes have low expression with a few outliers with higher expression.
+# Nuclear: mean = 8.37, median = 0
+# Mito: mean = 11592.72, median = 3.4
+# The nuclear expression is much lower than the mitochondrial expression, and the distribution is relatively even skewed, indicating that most nuclear genes have a low level of expression around the mean. The mitochondrial expression is right skewed, indicating that the majority of mitochondrial genes have high expression with a few outliers with lower expression.
 
 ```
 

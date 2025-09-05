@@ -16,7 +16,7 @@ Start by loading the data into R, as before.
 library(tidyverse)
 
 dt <- read_delim(
-  "~/Dropbox/teaching/2025_qbb/friday_data_exploration/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz",
+  "GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct",
   skip = 2, col_names = TRUE, delim = "\t"
 )
 ```
