@@ -96,7 +96,7 @@ Use `str_starts()` to identify which genes are mitochondrially encoded and store
 ```{r}
 # Code here
 
-dt_mito <- dt %>% mutate(is_mitochondrial = str_starts(Description,"MT-")) # Brooke W. forced me to write it this way at gunpoint
+dt_mito <- dt %>% mutate(is_mitochondrial = str_starts(Description,"MT-")) # citation: Brooke W
 
 mito_med <- dt_mito %>% group_by(is_mitochondrial) %>% summarize(mean = mean(Liver), median(Liver))
 

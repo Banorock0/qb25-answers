@@ -32,6 +32,18 @@ What do you notice about the shape of the distribution? What does it tell you ab
 ```{r q1}
 
 # answer here
+hist_l <- ggplot(dt, aes(x = Liver)) +
+  geom_histogram(breaks = seq(0, 100, 2)) +
+  xlab("Liver Expression (TPM)")
+
+hist_l
+# The distribution is right skewed. This indicates that most genes have low expression, with few highly expressed genes. This is likely true across most tissues because the expression levels include genes that are highly expressed only in specific tissues, so the same genes will be close to 0 expression in the other tissues.
+
+hist_b <- ggplot(dt, aes(x = Bladder)) +
+  geom_histogram(breaks = seq(0, 100, 2)) +
+  xlab("Bladder Expression (TPM)")
+
+hist_b
 ```
 
 ------------------------------------------------------------------------
@@ -43,6 +55,18 @@ Going back to the liver, now represent the same data with a density plot rather 
 ```{r q2}
 
 # answer here
+den_l <- ggplot(dt, aes(x = Liver)) +
+  geom_density() +
+  xlab("Liver Expression (TPM)")
+
+den_l
+
+den_llog <- ggplot(dt, aes(x = log10(Liver+1))) +
+  geom_density() +
+  xlab("Log Liver Expression log10(TPM)")
+
+den_llog
+
 ```
 
 ------------------------------------------------------------------------
@@ -54,6 +78,16 @@ Make a scatter plot comparing the expression genes in the `Liver` to the same ge
 ```{r q3}
 
 # answer here
+dt_HLV <- dt %>% rename(HLV = "Heart - Left Ventricle")
+
+scat_lh <- ggplot(dt_HLV, aes(x = log10(Liver+1), y = log10(HLV+1))) + 
+  geom_point(size = 1, alpha = 0.2) +
+  geom_abline(slope = 1, color = "red") +
+  xlab("Liver Expression log10(TPM)") +
+  ylab("Heart - Left Ventricle log10(TPM)")
+  
+scat_lh
+
 ```
 
 ------------------------------------------------------------------------
@@ -65,6 +99,17 @@ Color the previous scatter plot points based on whether the genes are mitochondr
 ```{r q4}
 
 # answer here
+dt_mito <- dt_HLV %>% mutate(is_mitochondrial = str_starts(Description,"MT-")) # citation: Brooke W
+
+scat_mito <- ggplot(dt_mito, aes(x = log10(Liver+1), y = log10(HLV+1), color = is_mitochondrial)) + 
+  geom_point(size = 1, alpha = 0.2) +
+  geom_abline(slope = 1, color = "red") +
+  xlab("Liver Expression log10(TPM)") +
+  ylab("Heart - Left Ventricle log10(TPM)") +
+  scale_color_brewer(palette = "Dark2")
+
+scat_mito
+
 ```
 
 ------------------------------------------------------------------------
@@ -74,13 +119,13 @@ Color the previous scatter plot points based on whether the genes are mitochondr
 Repeat question 1 (histogram), but faceting such that you create separate panels (arranged horizontally) for several tissues of interest:
 
 ```{r}
-focal_tissues <- c("Liver", "Testis", "Whole Blood", "Heart - Left Ventricle", "Brain - Cortex")
+focal_tissues <- c("Liver", "Testis", "Whole Blood", "HLV", "Brain - Cortex")
 ```
 
 This requires first converting the data into "long" format with `pivot_longer()`:
 
 ```{r}
-dt_long <- dt %>%
+dt_long <- dt_mito %>%
   select("Description", "is_mitochondrial", all_of(focal_tissues)) %>%
   pivot_longer(cols = focal_tissues, names_to = "Tissue", values_to = "TPM")
 ```
@@ -91,7 +136,19 @@ After creating 5-panel plot, also split into two rows that separate genes that a
 
 # your code for 5-panel plot
 
+hist_5 <- ggplot(dt_long, aes(x = TPM)) +
+  geom_histogram(breaks = seq(0, 100, 2)) +
+  facet_wrap(vars(Tissue), nrow = 1)
+
+hist_5
+
 # your code for 10-panel plot
+hist_10 <- ggplot(dt_long, aes(x = TPM)) +
+  geom_histogram(breaks = seq(0, 100, 2)) +
+  facet_wrap(vars(Tissue, is_mitochondrial), nrow = 2, scales = "free_y")
+
+hist_10
+
 ```
 
 ------------------------------------------------------------------------
