@@ -1,5 +1,5 @@
 \untracked
-*.bed
+ce11_genes.bed
 *.gtf
 *.gct
 *.fa
