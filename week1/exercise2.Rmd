@@ -1,0 +1,25 @@
+---
+title: "exercise1"
+output: html_document
+date: "2025-09-12"
+---
+Load necessary files and libaries.
+```{r}
+library(tidyverse)
+
+header <- c( "chr", "start", "end", "count" )
+dfA <- read_tsv("hg19-kc-count.bed", col_names = header)
+dfB <- read_tsv("hg16-kc-count.bed", col_names = header)
+df <- bind_rows(hg19=dfA, hg16=dfB, .id="assembly")
+```
+Plot kc counts across 1mb slices of hg19 per chromosome
+```{r}
+plt <- ggplot(df,aes(x=start,y=count,color=assembly)) +
+  geom_line() +
+  facet_wrap(vars(chr),5,6,scales="free")
+
+ggsave("exercise2.png",width=10,height = 10)
+
+plt
+
+```
