@@ -1,4 +1,4 @@
-Commands for exercise 1
+Exercise 1:
 ```
 bowtie2 -p 4 -x /Users/cmdb/qb25-answers/week2/genomes/sacCer3 -U ~/Data/BYxRM/fastq/A01_01.fq.gz > A01_01.sam
 
@@ -8,3 +8,6 @@ samtools index A01_01.bam
 
 samtools idxstats A01_01.bam > A01_01.idxstats
 ```
+
+Exercise 2:
+The haplotype markers match up with the visualization in IGV (i.e., R markers look the same and B markers look the same).
