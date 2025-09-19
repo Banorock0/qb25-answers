@@ -11,3 +11,8 @@ samtools idxstats A01_01.bam > A01_01.idxstats
 
 Exercise 2:
 The haplotype markers match up with the visualization in IGV (i.e., R markers look the same and B markers look the same).
+
+Exercise 4:
+```
+minimap2 -a -x map-ont ../genomes/sacCer3.fa ERR8562478.fastq > longreads.sam
+```

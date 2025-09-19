@@ -11,3 +11,8 @@ codons.py
 *.sizes
 .DS_STORE
 hg19-kc
+\genomes
+*.bam
+*.sam
+*.bai
+*.fastq
