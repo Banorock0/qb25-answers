@@ -6,3 +6,8 @@ ce11_genes.bed
 GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt
 fasta.py
 codons.py
+*.bed
+*.tsv
+*.sizes
+.DS_STORE
+hg19-kc
