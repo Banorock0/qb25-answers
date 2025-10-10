@@ -16,3 +16,5 @@ hg19-kc
 *.sam
 *.bai
 *.fastq
+*.tar
+*.gz
