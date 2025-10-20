@@ -18,3 +18,12 @@ hg19-kc
 *.fastq
 *.tar
 *.gz
+aau1043_dnm.csv
+aau1043_parental_age.csv
+AF.txt
+DP.txt
+\data
+*.vcf
+.RData
+.Rhistory
+gt_long.txt

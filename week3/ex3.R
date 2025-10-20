@@ -33,4 +33,15 @@ plt2 <- ggplot(filter_df2,aes(x=position,y=0,color=genotype)) +
   ylim(-0.25, 0.25) +
   facet_grid(rows = vars(chrom), scales = "free_x", space = "free_x")
 plt2
-ggsave("figures/ex3_4.png", plot = plt2, width=15, height=18)
+
+ggsave("figures/ex3_4_1.png", plot = plt2, width=15, height=18)
+
+df$genotype <- as.factor(df$genotype)
+
+plt3 <- ggplot(df, aes(x = position, y = 0, color = genotype)) +
+  geom_point(size = 3) +
+  ylim(-0.25, 0.25) +
+  facet_grid(rows = vars(chrom), cols = vars(sampleID), scales = "free_x", space = "free_x")
+plt3
+
+ggsave("figures/ex3_4_2.png", plot = plt3, width=30, height=18)

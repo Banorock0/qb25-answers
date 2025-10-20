@@ -30,5 +30,6 @@ else:
         fields = line.rstrip("\n").split("\t")
 
         # grab what you need from `fields`
-        f9 = fields[9].split(":")
-        print(f9[2])
+        for i in range(9,18,1):
+            field = fields[i].split(":")
+            print(field[2])
