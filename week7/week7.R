@@ -69,8 +69,6 @@ label_order <- as.factor(kmean_results$cluster) %>% sort() %>% as.matrix()
 mat_com_filt_sort <- mat_com_filt[rownames(label_order),]
 labels <- as.factor(kmean_results$cluster) %>% sort()
 
-png("figures/ex2_2_hm.png", width = 1200, height = 1000, res = 150)
-
 # Adjust margins and plot
 par(mar = c(10, 4, 4, 2))
 plt_hm <- heatmap(
@@ -83,8 +81,6 @@ plt_hm <- heatmap(
   las = 2,
   cexCol = 0.5
 )
-
-dev.off()
 
 # 3
 cluster9 <- rownames(label_order)[label_order == 9]
