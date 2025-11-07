@@ -153,7 +153,7 @@ res_sex_mapped <- res_sex_mapped %>% drop_na()
 vc <- ggplot(res_sex_mapped, aes(x = log2FoldChange, y = -log10(padj))) +
   geom_point(aes(color = significant), alpha = 0.7) +
   scale_color_manual(values = c("FALSE" = "grey", "TRUE" = "red")) +
-  scale_y_log10()
+  scale_y_log10() +
   ggtitle("Volcano Plot (SEX)")
 
 vc
