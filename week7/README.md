@@ -5,7 +5,7 @@
 ### 1.3
 1. The PCA plot suggests that replicate 1 of Fe is clustered with LFC.Fe and that replicate 3 of LFC.Fe is clustered with Fe. This is suggested by the fact that they are in similar regions of the PCA plot. This is likely the problem in the data and suggests that replicate 1 of Fe is actually a LFC.Fe replicate (3) and replicate 3 of LFC.Fe is a Fe replicate (1). To fix this, all that needs to be changed are the labels.
 
-2. The clustering along the PC1 axis seems to be individually distinct per group, while there is some overlap along PC2. This indicates that PC1 encompasses a component that is exclusive to each group. Therefore, the component that is unique to each group is tissue type, which indicates that PC1 describes the relatedness of the data specifically for individual tissue types.
+2. The clustering along the PC1 axis seems to be individually distinct per group, while there is some overlap along PC2. This indicates that PC1 encompasses a component that is exclusive to each group. Therefore, the component that is unique to each group is tissue type, which indicates that PC1 describes the relatedness of the data specifically for individual tissue types. Also, it seems like the order that separates the tissues along PC1 is from anterior tissues with a low PC1 to posterior tissues with a high PC1, with Cu-LFC-Fe tissues in the middle. However, since Fe appears prior to LFC-Fe on the PC1 axis, the tissues could also be being sorted alphanumerically by tissue name.
 
 ## 3
 The categories do make sense. Cluster 9 seems to be grouped by genes that are related to development pathways (e.g., oogenesis, eggshell formation, egg activation). Conversely, cluster 12 seems to group genes involved in immune response and proteolysis.

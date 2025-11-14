@@ -30,12 +30,24 @@ ggsave("figures/ex1_3_pca_err.png", plot = plt_pca_err)
 ## Fe_Rep1 -> LFC.Fe1_Rep3
 ## LFC.Fe_Rep3 -> Fe_Rep1
 
-df_pca <- pca_dat_filt$x[,1:2] %>% as.data.frame()
-rownames(df_pca)[rownames(df_pca) == "Fe_Rep1"] <- "LFC.Fe_Rep3_temp"
-rownames(df_pca)[rownames(df_pca) == "LFC.Fe_Rep3"] <- "Fe_Rep1_temp"
+# Change mislabeled data for whole dataset
+colnames(df_dat)[colnames(df_dat) == "Fe_Rep1"] <- "LFC.Fe_Rep3_temp"
+colnames(df_dat)[colnames(df_dat) == "LFC.Fe_Rep3"] <- "Fe_Rep1_temp"
 
-rownames(df_pca)[rownames(df_pca) == "LFC.Fe1_Rep3_temp"] <- "LFC.Fe1_Rep3"
-rownames(df_pca)[rownames(df_pca) == "Fe_Rep1_temp"] <- "Fe_Rep1"
+colnames(df_dat)[colnames(df_dat) == "LFC.Fe1_Rep3_temp"] <- "LFC.Fe1_Rep3"
+colnames(df_dat)[colnames(df_dat) == "Fe_Rep1_temp"] <- "Fe_Rep1"
+
+mat_dat <- as.matrix(df_dat)
+
+sds_dat <- rowSds(mat_dat) %>% sort(decreasing=TRUE)
+mat_dat_filt <- mat_dat[names(sds_dat)[1:500],]
+
+pca_dat_filt = prcomp(t(mat_dat_filt))
+pca_dat_filt$x[1,1:2]
+pca_dat_filt$sdev
+
+df_pca <- pca_dat_filt$x[,1:2] %>% as.data.frame()
+
 df_pca$tissue <- str_split_i(rownames(df_pca), '_', 1)
 df_pca$rep <- str_split_i(rownames(df_pca), '_', 2)
 plt_pca_fix <- ggplot(df_pca,aes(x=PC1,y=PC2,color=tissue,shape=rep)) +
