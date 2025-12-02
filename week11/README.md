@@ -20,4 +20,11 @@ Number of reads needed: $\frac{1Mbp * 3x}{100bp} = 30K\ reads$
 2. The data mostly fits the poisson expectations with overestimation for 30x coverage and underestimation for 29x coverage. The normal distribution underestimates coverage between 20x and 29x and overestimates between 30x and 40x coverage.
 
 ## 2
-### 2.2
+### 2.4
+dot -Tpng data/graph.dot -o figures/ex2_digraph.png
+
+### 2.5
+Possible sequence: CATTGATTCTTATTCATTT
+
+### 2.6
+To accurately reconstruct the genome, the graph needs to contain a unique path. This requires a sufficient read length and coverage so that the nodes can be resolved. Repeats must be shorter than the readlength. Without enough coverage or with repeats longer than k, multiple paths exist and the genome cannot be reconstructed.
